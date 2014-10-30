@@ -1,70 +1,34 @@
 
 public class Olympian {
 
-    // initializes the names for the array
-    static String[] array = {
-        "Steve",
-        "Sam",
-        "Jeb",
-        "John",
-        "Geoff",
-        "Kevin",
-        "Chris",
-        "Tyler",
-        "Omar",
-        "Samantha",
-        "Arlene",
-        "Shannon",
-        "Miranda",
-        "Cathrine",
-        "Laura",
-        "Jillian",
-    };
+    // creates a function to get olympian names
+    private String Olympianname;
+    public String getName(){
+        return this.Olympianname;
 
-    // initializes the ages for the array
-    static int[] array2 = {
-            22,
-            25,
-            40,
-            20,
-            32,
-            18,
-            14,
-            16,
-            54,
-            24,
-            19,
-            13,
-            45,
-            25,
-            29,
-            30,
+    }
 
-    };
+    // creates a function to get olympian ages
+    private int Olympianage;
+    public int getAge(){
+        return this.Olympianage;
 
-    // initializes the array for Sexes drawing from the Sex enumeration
-    static OlympianManager.Sex[] array3 = {
-            OlympianManager.Sex.Male,
-            OlympianManager.Sex.Male,
-            OlympianManager.Sex.Male,
-            OlympianManager.Sex.Male,
-            OlympianManager.Sex.Male,
-            OlympianManager.Sex.Male,
-            OlympianManager.Sex.Male,
-            OlympianManager.Sex.Male,
-            OlympianManager.Sex.Female,
-            OlympianManager.Sex.Female,
-            OlympianManager.Sex.Female,
-            OlympianManager.Sex.Female,
-            OlympianManager.Sex.Female,
-            OlympianManager.Sex.Female,
-            OlympianManager.Sex.Female,
-            OlympianManager.Sex.Female,
-    };
+    }
 
+    // creates a function to get olympian sexes
+    private OlympianManager.Sex Olympiansex;
+    public OlympianManager.Sex getSex(){
+        return this.Olympiansex;
 
-    // creates a new instance of Olympian manager "B" calling upon the string, int, and OlympianManager.Sex to fill it with "array, array2, array3" respectively
-    static OlympianManager B = new OlympianManager(array, array2, array3){
-    };
-};
+    }
+
+    // allocated the variables to name, age, and sex
+    public Olympian(String name, int age, OlympianManager.Sex sex) {
+        this.Olympianname = name;
+        this.Olympianage = age;
+        this.Olympiansex = sex;
+
+    }
+
+}
 

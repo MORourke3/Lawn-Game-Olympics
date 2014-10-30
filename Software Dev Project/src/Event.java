@@ -1,44 +1,34 @@
 
 public abstract class Event {
 
-    // creates the variables to be used by the events
-    String name;
     int playTo;
     boolean isPlayToExact;
     int playDistance;
 
-    // Initializes the array for the events and 6 are listed
-    static String[] array = {
-            "Washoos",
-            "CanJam",
-            "Horseshoes",
-            "Cornhole",
-            "Ladderball",
-            "Stickgame",
-    };
-    // creates a new instance of event manager "A" calling upon the string "array" to fill it
-    static EventManager A = new EventManager(array);
+    public abstract String getExtraInfo();
 
 
-    // each event is created as a subclass to be used by event
-
-    public class CanJamEvent {int FrisbeeSize;} {
+    public String name;
+    public String eventName(){
+        return name;
     }
 
-    public class CornHoleEvent {int NumBeanBags;}{
+
+    public void eventNamed(String name){
+        this.name = name;
     }
 
-    public class HorseShoesEvent {int NumHorseShoes;}{
+    public String events;
+
+    public Event(String events){
+        this.events = events;
     }
 
-    public class LadderBallEvent {int NumRungs;}{
+
+    public Event(){
+
     }
 
-    public class StickGameEvent {int FrisbeeSize;}{
-    }
-
-    public class WashoosEvent {boolean HasAutoWinStick; int NumWashoos;}{
-    }
 
 }
 

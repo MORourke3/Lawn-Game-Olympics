@@ -1,0 +1,17 @@
+LGOO
+Steve,22,Male
+Jeb,22,Male
+Geoff,22,Male
+John,22,Male
+Kevin,22,Male
+Chris,22,Male
+Tyler,22,Male
+Omar,22,Male
+Samantha,22,Female
+Arlene,22,Female
+Shannon,22,Female
+Miranda,22,Female
+Catherine,22,Female
+Laura,22,Female
+Jillian,22,Female
+Jessica,22,Female
