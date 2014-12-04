@@ -6,7 +6,7 @@ public class Horseshoes extends Event{
     private int numHorseShoes = 5;
 
     Horseshoes(){
-        eventNamed("Horseshoes");
+        setNamed("Horseshoes");
     }
 
     public String getExtraInfo() {

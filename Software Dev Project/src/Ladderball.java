@@ -6,7 +6,7 @@ public class Ladderball extends Event{
     private int numRungs = 5;
 
     Ladderball(){
-        eventNamed ("LadderBall");
+        setNamed ("LadderBall");
     }
 
     public String getExtraInfo() {

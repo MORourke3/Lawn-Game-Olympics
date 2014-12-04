@@ -1,63 +1,68 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+//was not able to get File reader to grab a file via "edit configurations"
+//closing in on something that may work, needs fixing.
 
 public class OlympianManager {
 
     // enumerator for sexes
     public enum Sex{Male, Female}
-
     public Olympian[] olympians;
+    private String file;
 
     // the constructor
-    public OlympianManager() {
+    public OlympianManager(String file) {
 
-        // file location
-        String[] file = {"C:\\Users\\Mjo95_000\\Documents\\GitHub\\Lawn-Game-Olympics\\Software Dev Project\\Olympians.LGOO.txt"};
+        this.file = file;
+        int olympianCount = 0;
+        BufferedReader read;
 
         try {
 
-            // creates the length of the array
-            this.olympians = new Olympian[16];
-
             // allows input from the file
-            BufferedReader argInput = new BufferedReader(new FileReader(file[0]));
+            read = new BufferedReader(new FileReader(file));
+            String fileLine = read.readLine();
 
-            String fileLine;
-
-            do {
-
-                fileLine = argInput.readLine();
                 if (fileLine != null) {
+                    System.out.println("File is blank");
+                } else {
 
-                    // checks if the file has the first line LGOO
-                    if (fileLine.equals("LGOO")) {
+                        // checks if the file has the first line LGOO
+                    } if (fileLine.equals("LGOO")) {
 
-                        for (int i = 0; i < this.olympians.length; i++) {
+                            olympians = new Olympian[getLength()];
 
-                            // divides each person based on where the comma is placed and assigns their parameters based on this
-                            fileLine = argInput.readLine();
-                            String comma = (",");
-                            String[] parameters = fileLine.split(comma);
-                            Sex sex;
+                            while (read.ready()) {
 
-                            // the third variable assignment
-                            if (parameters[2].equals("Male")) {
-                                sex = Sex.Male;
+                                // divides each person based on where the comma is placed and assigns their parameters based on this
+                                String comma = (",");
+                                String X[] = fileLine.split(comma);
 
-                            } else {
-                                sex = Sex.Female;
+                                // initializes instances to be used within OlympianManager
+                                String name;
+                                int age;
+                                Sex sex;
+
+                                // the first variable assignment
+                                name = X[0];
+
+                                // the second variable assignment
+                                age = Integer.parseInt(X[2]);
+
+                                // the third variable assignment
+                                if (X[1].equals("Male")) {
+                                    sex = Sex.Male;
+
+                                } else {
+                                    sex = Sex.Female;
+
+                                }
+
+                                olympians[olympianCount] = new Olympian(name, age, sex);
+                                olympianCount++;
 
                             }
-
-                            // the first and second variable assignment
-                            this.olympians[i] = new Olympian(parameters[0], Integer.parseInt(parameters[1]), sex);
-
-                        } break;
-                    }
-                }
-            }
-            while (fileLine != null);
+                        }
+            read.close();
         }
 
         // a catch in case the file does not read
@@ -70,7 +75,23 @@ public class OlympianManager {
     // gets the length of the array
     public int getLength(){
 
-        return olympians.length;
+        LineNumberReader Y;
+        int length = 0;
+
+        try {
+            Y = new LineNumberReader(new FileReader(new File(file)));
+            Y.skip(Long.MAX_VALUE);
+
+            length = Y.getLineNumber();
+            Y.close();
+
+            } catch (IOException ioe) {
+                ioe.printStackTrace();
+                System.out.println("File was unable to be read");
+            }
+
+            return length;
+
     }
 
     // gets the olympian array

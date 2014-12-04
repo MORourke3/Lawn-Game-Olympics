@@ -7,7 +7,7 @@ public class Washoos extends Event{
     private int numWashoos = 5;
 
      Washoos(){
-        eventNamed ("Washoos");
+        setNamed ("Washoos");
 
     }
 

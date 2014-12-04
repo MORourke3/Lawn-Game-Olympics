@@ -6,7 +6,7 @@ public class Stickgame extends Event{
     private int frisbeeSize = 5;
 
     Stickgame(){
-        eventNamed("Stickgame");
+        setNamed("Stickgame");
     }
 
     public String getExtraInfo() {

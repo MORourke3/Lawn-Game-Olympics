@@ -6,7 +6,7 @@ public class Cornhole extends Event{
     private int numBeanBags = 5;
 
     Cornhole(){
-        eventNamed("Cornhole");
+        setNamed("Cornhole");
     }
 
     public String getExtraInfo() {

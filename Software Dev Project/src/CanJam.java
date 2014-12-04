@@ -6,7 +6,7 @@ public class CanJam extends Event{
     private int frisbeeSize = 5;
 
     CanJam(){
-        eventNamed ("CanJam");
+        setNamed ("CanJam");
     }
 
     public String getExtraInfo() {

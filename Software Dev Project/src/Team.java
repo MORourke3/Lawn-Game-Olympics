@@ -2,11 +2,21 @@
 public class Team {
 
     // creates variables to be used
-    Olympian olympian1;
-    Olympian olympian2;
+    public Olympian olympian1;
+    public Olympian olympian2;
 
-    int wins;
-    int losses;
+    private int wins;
+    private int losses;
+
+    private String name;
+
+    public int getwins(){
+        return wins;
+    }
+
+    public void setNamed(String name){
+        this.name = name;
+    }
 
     // assigns each team to a variable
     public Team(Olympian A, Olympian B)

@@ -1,29 +1,21 @@
 
 public abstract class Event {
 
-    int playTo;
-    boolean isPlayToExact;
-    int playDistance;
+    private int playTo;
+    private boolean isPlayToExact;
+    private int playDistance;
 
     public abstract String getExtraInfo();
 
 
-    public String name;
-    public String eventName(){
+    private String name;
+    public String getName(){
         return name;
     }
 
-
-    public void eventNamed(String name){
+    public void setNamed(String name){
         this.name = name;
     }
-
-    public String events;
-
-    public Event(String events){
-        this.events = events;
-    }
-
 
     public Event(){
 
